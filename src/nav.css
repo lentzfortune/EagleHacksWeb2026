@@ -1,0 +1,177 @@
+/* Navbar styles - place this file next to nav.jsx */
+.site-nav {
+  width: 100%;
+  position: fixed; /* attach to the very top of the viewport */
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  /* semi-transparent so the background image shows through; attached to top */
+  background: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.18));
+  backdrop-filter: blur(6px);
+}
+
+.nav-inner {
+  /* make the inner row span full width but keep content aligned with generous padding */
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0.9rem 2.25rem; /* desktop: more horizontal space */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1 1 auto; /* allow left area to shrink so right button stays visible */
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.nav-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  padding: 0.2rem 0.35rem;
+}
+.nav-links a:hover {
+  color: #dfe7ff;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto; /* keep signup button from shrinking */
+}
+
+.btn.signup {
+  display: inline-block;
+  background: #6aa84f; /* green */
+  color: white;
+  padding: 0.5rem 1.1rem;
+  border-radius: 24px;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(106,168,79,0.24), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+.btn.signup:hover {
+  filter: brightness(1.03);
+  box-shadow: 0 8px 26px rgba(106,168,79,0.28), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* Mobile-only signup list item: hidden on desktop, visible inside the dropdown on mobile */
+.mobile-signup { display: none; }
+
+
+/* Hamburger (hidden on large screens) */
+.hamburger {
+  display: none;
+  width: 46px;
+  height: 40px;
+  padding: 6px;
+  background: transparent;
+  border: none;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  margin: 5px 0;
+  border-radius: 3px;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+.hamburger.is-open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Mobile menu styles: hidden by default, slide down when open */
+.nav-links.open {
+  display: flex;
+}
+
+@media (max-width: 1199px) {
+  /* Slightly tighter spacing for laptops */
+  .nav-inner { padding: 0.75rem 1.2rem; }
+  .nav-links { gap: 1.5rem; }
+}
+
+@media (max-width: 720px) {
+  /* Mobile: show hamburger, hide inline links; nav becomes taller and menu slides down */
+  .hamburger { display: inline-flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.92));
+    flex-direction: column;
+    gap: 0;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    z-index: 9998;
+  }
+  .nav-links li { padding: 0.6rem 0; }
+  .nav-links a { display: block; font-size: 1rem; padding: 0.25rem 0.5rem; }
+  .nav-inner { padding: 0.5rem 0.9rem; }
+  .nav-logo { height: 36px; }
+  /* Keep Sign Up visible on phones: show nav-right and keep it above the dropdown */
+  .nav-right { display: flex; z-index: 10002; }
+
+  /* When nav has open state (class added to nav-links) keep menu visible */
+  .nav-links.open { display: flex; }
+  /* mobile-signup kept hidden because signup is visible in header */
+  .mobile-signup { display: none; }
+}
+
+/* iPad / medium tablet adjustments: ensure signup still visible and layout doesn't overflow */
+@media (min-width: 721px) and (max-width: 1024px) {
+  .nav-inner { padding: 0.6rem 1rem; }
+  .nav-links { gap: 1rem; }
+  .nav-logo { height: 40px; }
+  .nav-right .btn.signup { padding: 0.45rem 0.9rem; font-size: 0.95rem; }
+  .nav-right { z-index: 10002; }
+}
+
+/* Ensure the dropdown menu doesn't visually cover the signup button: dropdown z-index lower than nav-right */
+.nav-links {
+  z-index: 9999;
+}
+
+/* Make the signup button slightly smaller on very small screens so it fits */
+@media (max-width: 420px) {
+  .nav-right .btn.signup { padding: 0.35rem 0.7rem; font-size: 0.95rem; }
+  .nav-inner { padding: 0.4rem 0.6rem; }
+}
+
+
+
+/* Responsive: collapse spacing on small screens */
+@media (max-width: 720px) {
+  .nav-links { gap: 1rem; font-size: 0.95rem; }
+  .nav-inner { padding: 0.5rem 0.75rem; }
+  .nav-logo { height: 36px; }
+}

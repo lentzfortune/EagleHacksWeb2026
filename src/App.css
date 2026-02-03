@@ -1,0 +1,150 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 2rem);
+  text-align: center;
+}
+
+/* App content container so background shows through and content remains readable */
+.app-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.38); /* translucent panel */
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+  color: inherit;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* push page content down so fixed navbar doesn't cover the hero */
+.app-main {
+  padding-top: clamp(72px, 9vh, 96px); /* adjust to your navbar height */
+}
+
+/* Hero styles */
+.hero {
+  text-align: center;
+  padding: clamp(2rem, 6vw, 6rem) 1rem clamp(2.5rem, 8vw, 6rem);
+  color: #fff;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 8vw, 6rem);
+  margin: 0 0 0.6rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.hero h2 { margin: 0 0 0.5rem; font-weight: 600; font-size: clamp(1rem, 2.2vw, 1.8rem); }
+.hero h3 { margin: 0 0 1.5rem; font-weight: 500; font-size: clamp(0.9rem, 1.8vw, 1.2rem); }
+
+.hero-cta { margin-top: 1.2rem; }
+.btn.register {
+  background: #6aa84f;
+  color: #fff;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(106,168,79,0.22), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.btn.register:hover { filter: brightness(1.03); }
+
+/* Responsive hero sizing */
+@media (max-width: 1024px) {
+  .hero { padding: 3.2rem 1rem 4.5rem; }
+  .hero h1 { font-size: 3rem; }
+  .btn.register { padding: 0.8rem 1.3rem; }
+}
+@media (max-width: 720px) {
+  .hero { padding: 2.6rem 0.75rem 3.5rem; }
+  .hero h1 { font-size: 2.4rem; }
+  .hero h2, .hero h3 { font-size: 1rem; }
+  .btn.register { padding: 0.7rem 1.1rem; font-size: 0.98rem; }
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Hero media (large responsive image with glowing border) */
+.hero-media {
+  margin: 4rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Soft framed image container */
+.hero-image-wrap {
+  width: min(94%, 1100px);
+  max-width: 1100px;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  border-radius: 10px;
+  border: none;
+  background-clip: padding-box;
+  box-shadow: none;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 900ms cubic-bezier(.22,.9,.33,1), transform 900ms cubic-bezier(.22,.9,.33,1);
+}
+
+.hero-image.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Large-screen lift for hero media to achieve dramatic spacing on very wide viewports */
+@media (min-width: 1200px) {
+  .hero-media { margin-top: 12rem; }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

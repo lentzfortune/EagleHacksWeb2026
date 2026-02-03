@@ -1,0 +1,111 @@
+.gallery-stats {
+  padding: 4rem 1rem;
+  color: #fff;
+}
+.gs-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.gs-left {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding-left: 0rem;
+  transform: translateX(-2rem);
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.stat-num {
+  font-size: clamp(2.8rem, 9vw, 6.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.6), 0 0 8px rgba(106,168,79,0.08);
+  -webkit-font-smoothing: antialiased;
+}
+.stat-num sup {
+  font-size: 2rem;
+  vertical-align: top;
+  margin-left: 0.rem;
+}
+.stat-label {
+  margin-top: 0.6rem;
+  color: #e9e7e7;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+.gs-right {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 320px;
+}
+.photo {
+  position: absolute;
+  width: 380px;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  display: block;
+}
+.photo-top {
+  left: -50px;
+  bottom: 120px;
+  transform: translate(12%, -10%) rotate(-2deg);
+  z-index: 3;
+  width: 440px;
+  height: 300px;
+}
+.photo-bottom {
+  right: -50px;
+  top: 100px;
+  transform: translate(10%, 18%) rotate(2deg);
+  width: 460px;
+  height: 320px;
+  z-index: 2;
+}
+
+/* subtle entrance */
+.photo, .stat-num {
+  opacity: 0;
+  transform-origin: center;
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(.22,.9,.33,1);
+}
+.gallery-stats .photo.loaded,
+.gallery-stats .stat-num.loaded {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .gs-inner { flex-direction: column-reverse; gap: 2rem; }
+  .gs-left { align-items: center; text-align: center; transform: none; padding-left: 0; }
+  .stat { align-items: center; }
+  .stat-num { font-size: 4.2rem; }
+  .stat-num sup { font-size: 1.2rem; }
+  .stat-label { font-size: 1rem; }
+  .gs-right { width: 100%; min-height: 240px; }
+  .photo, .photo-top, .photo-bottom { position: relative; transform: none; width: min(78%, 420px); height: auto; }
+  .photo-bottom { margin-top: 1rem; }
+  .photo-top { right: 0; top: 0; }
+  .photo-bottom { right: -30px; bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo, .stat-num { transition: none; }
+}
