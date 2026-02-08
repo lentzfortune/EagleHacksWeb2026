@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import './FaqSection.css'
 
 const faqSections = [
   {
-    title: 'General Event Details',
+    id: 'general',
+    title: 'General',
     items: [
       {
         question: 'What is a hackathon?',
@@ -16,25 +17,42 @@ const faqSections = [
           "None! EagleHacks welcomes all skill levels. If you're new, you'll find beginner-friendly workshops, mentors, and teammates to help you learn fast.",
       },
       {
-        question: 'Who can participate?',
-        answer:
-          'Students and recent graduates from any college, university, or coding bootcamp are welcome. Not a student? You can still join as a mentor or volunteer.',
-      },
-      {
         question: 'How much does it cost?',
         answer:
           'Nothing. EagleHacks is free for all accepted participants, thanks to our sponsors and partners.',
       },
+      {
+        question: 'Who can participate?',
+        answer:
+          'Students and recent graduates from any college, university, or coding bootcamp are welcome. Not a student? You can still join as a mentor or volunteer.',
+      },
     ],
   },
   {
-    title: 'Logistics',
+    id: 'event',
+    title: 'Event Details',
     items: [
       {
         question: 'When and where is EagleHacks?',
         answer:
-          'EagleHacks runs March 26–29, 2026 at Florida Gulf Coast University. Venue details and arrival info will be announced closer to the event.',
+          'EagleHacks runs March 27–29, 2026 at Florida Gulf Coast University. Venue details and arrival info will be announced closer to the event.',
       },
+      {
+        question: 'Is EagleHacks in-person or virtual?',
+        answer:
+          'EagleHacks 2026 will be an in-person event. We are excited to welcome everyone on campus for a full weekend experience.',
+      },
+      {
+        question: 'How long is EagleHacks?',
+        answer:
+          'It is a weekend-long hackathon with opening and closing ceremonies, workshops, and a full hacking period in between.',
+      },
+    ],
+  },
+  {
+    id: 'logistics',
+    title: 'Logistics',
+    items: [
       {
         question: 'Do I need a team?',
         answer:
@@ -45,40 +63,64 @@ const faqSections = [
         answer:
           'Bring a laptop, charger, and anything you need to be comfortable for a weekend of building. A reusable water bottle and headphones help a lot, too.',
       },
+      {
+        question: 'Will food be provided?',
+        answer:
+          'Yes. We will provide meals and snacks throughout the weekend.',
+      },
     ],
   },
   {
-    title: 'Sponsors & Volunteers',
+    id: 'sponsor',
+    title: 'Sponsors/Volunteer',
     items: [
       {
-        question: 'How can I sponsor, mentor, or volunteer?',
+        question: 'How can I sponsor EagleHacks?',
         answer:
-          'Reach out to our team and we will get you the right links. Sponsor and volunteer forms will be shared soon.',
+          'Reach out to our team and we will get you the right information. Sponsor materials will be shared soon.',
+      },
+      {
+        question: 'How can I mentor or volunteer?',
+        answer:
+          'We welcome mentors and volunteers. Sign-up details will be posted as we get closer to the event.',
       },
     ],
   },
 ]
 
 export default function FaqSection() {
+  const [activeSection, setActiveSection] = useState(faqSections[0].id)
+  const activeItems = useMemo(
+    () => faqSections.find((section) => section.id === activeSection)?.items ?? [],
+    [activeSection]
+  )
+
   return (
     <div className="faq-section">
-      <h2>FAQ</h2>
+      <h2>FAQs</h2>
       <p className="faq-intro">
         Have questions? We have answers. If you do not see what you need, reach out to our team.
       </p>
-      <div className="faq-sections">
+      <div className="faq-tabs" role="tablist" aria-label="FAQ categories">
         {faqSections.map((section) => (
-          <div key={section.title} className="faq-group">
-            <h3>{section.title}</h3>
-            <div className="faq-list">
-              {section.items.map((item) => (
-                <details key={item.question} className="faq-item">
-                  <summary>{item.question}</summary>
-                  <p>{item.answer}</p>
-                </details>
-              ))}
-            </div>
-          </div>
+          <button
+            key={section.id}
+            type="button"
+            role="tab"
+            aria-selected={activeSection === section.id}
+            className={`faq-tab ${activeSection === section.id ? 'active' : ''}`}
+            onClick={() => setActiveSection(section.id)}
+          >
+            {section.title}
+          </button>
+        ))}
+      </div>
+      <div className="faq-list" role="tabpanel">
+        {activeItems.map((item) => (
+          <details key={item.question} className="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
         ))}
       </div>
     </div>

@@ -38,13 +38,13 @@ export default function Nav() {
             <li><a href="#faq" onClick={close}>FAQ</a></li>
             <li><a href="#connect" onClick={close}>Connect</a></li>
             {/* mobile-only sign up (appears in dropdown on phones) */}
-            <li className="mobile-signup"><a className="btn guide" href="#" target="_blank" rel="noopener noreferrer" onClick={close}>Hacker Guide</a></li>
+            {/* <li className="mobile-signup"><a className="btn guide" href="#" target="_blank" rel="noopener noreferrer" onClick={close}>Hacker Guide</a></li> */}
             <li className="mobile-signup"><a className="btn signup" href="https://uz9vkfej.forms.app/untitled-form" target="_blank" rel="noopener noreferrer" onClick={close}>Sign Up</a></li>
           </ul>
         </div>
 
         <div className="nav-right">
-          <a className="btn guide" href="#" target="_blank" rel="noopener noreferrer">Hacker Guide</a>
+          {/* <a className="btn guide" href="#" target="_blank" rel="noopener noreferrer">Hacker Guide</a> */}
           <a className="btn signup" href="https://uz9vkfej.forms.app/untitled-form" target="_blank" rel="noopener noreferrer">Sign Up</a>
         </div>
       </div>

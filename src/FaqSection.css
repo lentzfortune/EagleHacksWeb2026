@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 1.5rem 1rem 2.5rem;
   color: #fff;
-  text-align: left;
+  text-align: center;
 }
 
 .faq-section h2 {
@@ -16,20 +16,41 @@
   opacity: 0.85;
 }
 
-.faq-sections {
-  display: grid;
-  gap: 1.8rem;
+.faq-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 1.2rem 0 1.6rem;
+  justify-content: center;
 }
 
-.faq-group h3 {
-  margin: 0 0 0.8rem;
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-  color: #dfe7ff;
+.faq-tab {
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.faq-tab:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.faq-tab.active {
+  background: #6aa84f;
+  color: #ffffff;
 }
 
 .faq-list {
   display: grid;
   gap: 0.9rem;
+  text-align: center;
 }
 
 .faq-item {
@@ -43,6 +64,9 @@
   cursor: pointer;
   font-weight: 600;
   list-style: none;
+  position: relative;
+  text-align: center;
+  padding: 0 1.6rem;
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -51,7 +75,10 @@
 
 .faq-item summary::after {
   content: '+';
-  float: right;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   font-weight: 700;
   color: #6aa84f;
 }

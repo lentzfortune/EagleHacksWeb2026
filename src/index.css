@@ -10,8 +10,8 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  /* Background image served from the Vite `public/` folder. Place your image at `public/background.jpg` */
-  --app-bg-image: url('./assets/EH-background\ 1.png');
+  /* Background image disabled for solid black theme */
+  --app-bg-image: none;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -44,10 +44,8 @@ body {
    image's natural size. */
 body {
   background-image: var(--app-bg-image);
-  background-size: 100% auto; /* fit width, keep aspect ratio; use `auto` to keep original size */
-  background-position: top center; /* start at the top */
+  background-color: #000000;
   background-repeat: no-repeat;
-  background-attachment: scroll; /* background moves with page scroll */
 }
 
 h1 {
