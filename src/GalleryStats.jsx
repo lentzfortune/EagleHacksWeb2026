@@ -43,12 +43,12 @@ export default function GalleryStats() {
       <div className="gs-inner">
         <div className="gs-left">
           <div className="stat">
-            <div className={`stat-num ${revealNumbers ? 'loaded' : ''}`}>60<sup>+</sup></div>
+            <div className={`stat-num ${revealNumbers ? 'loaded' : ''}`}>100+</div>
             <div className="stat-label">Innovators building the future</div>
           </div>
           <div className="stat">
-            <div className={`stat-num ${revealNumbers ? 'loaded' : ''}`} style={{ transitionDelay: '120ms' }}>15<sup>+</sup></div>
-            <div className="stat-label">Diverse teams</div>
+            <div className={`stat-num ${revealNumbers ? 'loaded' : ''}`} style={{ transitionDelay: '120ms' }}>3+</div>
+            <div className="stat-label">Sponsors</div>
           </div>
           <div className="stat">
             <div className={`stat-num ${revealNumbers ? 'loaded' : ''}`} style={{ transitionDelay: '240ms' }}>36</div>

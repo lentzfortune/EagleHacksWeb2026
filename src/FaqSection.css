@@ -43,7 +43,7 @@
 }
 
 .faq-tab.active {
-  background: #6aa84f;
+  background: #d94b2b;
   color: #ffffff;
 }
 
@@ -80,7 +80,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-weight: 700;
-  color: #6aa84f;
+  color: #d94b2b;
 }
 
 .faq-item[open] summary::after {

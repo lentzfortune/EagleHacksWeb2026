@@ -1,18 +1,24 @@
 .about {
   padding: 1rem 1rem;
   color: #fff;
-  text-align: left;
+  text-align: center;
 }
 .about-inner {
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
   gap: 2.5rem;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .about-left {
-  flex: 1 1 52%;
+  flex: 0 1 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 720px;
 }
 .about-title {
   font-size: clamp(1.6rem, 4.5vw, 3rem);
@@ -25,6 +31,9 @@
   line-height: 1.6;
   color: #e9e7e7;
   margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 .about-list {
   list-style: none;
@@ -32,12 +41,17 @@
   margin: 0 0 1.25rem 0;
   display: grid;
   gap: 0.65rem;
+  justify-items: center;
+  text-align: center;
 }
 .about-item {
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
+  display: inline-flex;
+  flex-direction: row;
+  gap: 0.6rem;
+  align-items: center;
   color: #dcdcdc;
+  justify-content: center;
+  text-align: center;
 }
 .about-item .icon {
   display: inline-block;
@@ -50,14 +64,16 @@
 .about-cta {
   margin-top: 1rem;
   color: #f6f6f6;
+  text-align: center;
 }
 .about-right {
-  flex: 1 1 44%;
+  flex: 0 1 auto;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 .about-image-wrap {
-  width: min(100%, 420px);
+  width: min(90%, 520px);
   border-radius: 12px;
   overflow: hidden;
   background: #111;
@@ -69,7 +85,7 @@
 }
 
 @media (max-width: 900px) {
-  .about-inner { flex-direction: column-reverse; gap: 1.25rem; }
+  .about-inner { gap: 1.25rem; }
   .about-left, .about-right { width: 100%; }
   .about-title { font-size: 2rem; text-align: center; }
   .about-image-wrap { width: min(88%, 520px); }

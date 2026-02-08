@@ -46,28 +46,33 @@
 
 .hero-cta { margin-top: 1.2rem; }
 .btn.register {
-  background: #6aa84f;
+  background: linear-gradient(135deg, #ff7a59 0%, #d94b2b 60%, #b63a22 100%);
   color: #fff;
-  padding: 0.9rem 1.6rem;
+  padding: 1.05rem 2rem;
   border-radius: 999px;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(106,168,79,0.22), inset 0 1px 0 rgba(255,255,255,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 18px 44px rgba(217,75,43,0.55), 0 0 30px rgba(255,122,89,0.6), inset 0 1px 0 rgba(255,255,255,0.22);
+  animation: cta-pulse 2.8s ease-in-out infinite;
 }
-.btn.register:hover { filter: brightness(1.03); }
+.btn.register:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
 
 /* Responsive hero sizing */
 @media (max-width: 1024px) {
   .hero { padding: 3.2rem 1rem 4.5rem; }
   .hero h1 { font-size: 3rem; }
-  .btn.register { padding: 0.8rem 1.3rem; }
+  .btn.register { padding: 0.95rem 1.7rem; }
 }
 @media (max-width: 720px) {
   .hero { padding: 2.6rem 0.75rem 3.5rem; }
   .hero h1 { font-size: 2.4rem; }
   .hero h2, .hero h3 { font-size: 1rem; }
-  .btn.register { padding: 0.7rem 1.1rem; font-size: 0.98rem; }
+  .btn.register { padding: 0.85rem 1.5rem; font-size: 1.05rem; }
 }
 
 .logo {
@@ -165,16 +170,16 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(217, 75, 43, 0.12);
+  border: 1px solid rgba(217, 75, 43, 0.3);
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
   flex: 0 0 44px;
 }
 
 .footer-icon-link:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(217, 75, 43, 0.22);
+  border-color: rgba(217, 75, 43, 0.6);
 }
 
 .footer-icon-link svg {
@@ -188,6 +193,18 @@
     transition: none;
     opacity: 1;
     transform: none;
+  }
+  .btn.register {
+    animation: none;
+  }
+}
+
+@keyframes cta-pulse {
+  0%, 100% {
+    box-shadow: 0 18px 44px rgba(217,75,43,0.55), 0 0 30px rgba(255,122,89,0.6), inset 0 1px 0 rgba(255,255,255,0.22);
+  }
+  50% {
+    box-shadow: 0 22px 54px rgba(217,75,43,0.7), 0 0 40px rgba(255,122,89,0.8), inset 0 1px 0 rgba(255,255,255,0.28);
   }
 }
 

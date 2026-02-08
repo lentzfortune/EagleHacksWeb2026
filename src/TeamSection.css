@@ -1,0 +1,153 @@
+.team-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+  color: #fff;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  margin-bottom: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.6);
+}
+
+.team-card {
+  background: rgba(0, 0, 0, 0.42);
+  border-radius: 16px;
+  padding: 2rem 1.5rem 1.5rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.team-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.team-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: min(220px, 70vw);
+  scroll-snap-align: center;
+}
+
+.team-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top, #ff8a66, #d94b2b 60%, #2a0b0b 100%);
+  display: grid;
+  place-items: center;
+  color: #0a1b16;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 0 0 4px rgba(217, 75, 43, 0.3);
+  overflow: hidden;
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.team-member h3 {
+  margin: 0.4rem 0 0;
+  font-size: 1rem;
+}
+
+.team-member p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #f5c2b5;
+}
+
+.team-link {
+  margin-top: 0.2rem;
+  background: #d94b2b;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.team-link span {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: #fff;
+  color: #d94b2b;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+.team-controls {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.team-controls button {
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.team-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.team-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.team-dot.active {
+  background: #d94b2b;
+}
+
+@media (max-width: 720px) {
+  .team-controls {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .team-controls button {
+    width: 100%;
+  }
+}
