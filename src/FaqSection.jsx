@@ -76,8 +76,20 @@ const faqSections = [
     items: [
       {
         question: 'How can I sponsor EagleHacks?',
-        answer:
-          'Reach out to our team and we will get you the right information. Sponsor materials will be shared soon.',
+        answer: (
+          <>
+            Reach out to{' '}
+            <a href="https://www.linkedin.com/in/dilgunas2003/" target="_blank" rel="noopener noreferrer">
+              Deividas Ilgunas
+            </a>
+            {' '}or{' '}
+            <a href="https://www.linkedin.com/in/jordantyrobertson/" target="_blank" rel="noopener noreferrer">
+              Jordan Robertson
+            </a>
+            {' '}on LinkedIn or email{' '}
+            <a href="mailto:fgcu.cssec@gmail.com">fgcu.cssec@gmail.com</a>.
+          </>
+        ),
       },
       {
         question: 'How can I judge or volunteer?',
