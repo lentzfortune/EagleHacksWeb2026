@@ -36,6 +36,7 @@ export default function Nav() {
           <ul id="primary-navigation" className={`nav-links ${open ? 'open' : ''}`}>
             <li><a href="#about" onClick={close}>About</a></li>
             <li><a href="#faq" onClick={close}>FAQ</a></li>
+            <li><a href="#sponsors" onClick={close}>Sponsors</a></li>
             <li><a href="#connect" onClick={close}>Connect</a></li>
             {/* mobile-only sign up (appears in dropdown on phones) */}
             {/* <li className="mobile-signup"><a className="btn guide" href="#" target="_blank" rel="noopener noreferrer" onClick={close}>Hacker Guide</a></li> */}

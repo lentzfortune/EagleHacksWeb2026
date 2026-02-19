@@ -13,8 +13,6 @@ const teamMembers = [
      { name: 'Katharine Ringo', role: 'Events, Logistics', link: 'https://www.linkedin.com/in/katharine-ringo-422917274/' },
      { name: 'Samson Silver', role: 'Communications, Marketing', link: 'https://www.linkedin.com/in/samson-silver-798536293/' },
      { name: 'Kayla Kerr', role: 'Budgeting, Marketing', link: 'https://www.linkedin.com/in/kayla-kerr-a67a121b5/' },
-     { name: 'Alden Harding', role: 'Logistics, Marketing', link: 'https://www.linkedin.com/in/alden-harding/' },
-     { name: 'Vivian Procacci', role: 'Marketing', link: 'https://www.linkedin.com/in/vivian-procacci/' },
      { name: 'Professor Allen', role: 'Faculty Advisor', link: 'https://www.linkedin.com/in/paul-allen-235312b/' },
 ]
 

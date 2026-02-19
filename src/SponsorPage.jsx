@@ -1,5 +1,12 @@
 import React from 'react'
 import './SponsorPage.css'
+import arthrexLogo from './assets/sponsors/arthrex.svg'
+import eightpointLogo from './assets/sponsors/Eightpoint.svg'
+
+const sponsors = [
+  { name: 'Arthrex', logo: arthrexLogo, href: 'https://www.arthrex.com/', theme: 'light' },
+  { name: 'Eightpoint', logo: eightpointLogo, href: 'https://eightpoint.io/', theme: 'dark' },
+]
 
 export default function SponsorPage() {
   return (
@@ -8,11 +15,17 @@ export default function SponsorPage() {
 
       <div className="sponsors-panel">
         <div className="sponsor-grid">
-          {/* Placeholder sponsor boxes - replace with <img src="..." /> when available */}
-          {Array.from({ length: 1 }).map((_, i) => (
-            <div className="sponsor-box" key={i}>
-              <div className="sponsor-placeholder">TBA</div>
-            </div>
+          {sponsors.map((sponsor) => (
+            <a
+              className={`sponsor-box ${sponsor.theme === 'dark' ? 'is-dark' : ''}`}
+              key={sponsor.name}
+              href={sponsor.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${sponsor.name} website`}
+            >
+              <img className="sponsor-logo" src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+            </a>
           ))}
         </div>
       </div>

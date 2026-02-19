@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import Nav from './nav'
 import './App.css'
 import heroImg from './assets/EagleHacks2026.png'
-import footerLogo from './assets/Eagle_White 1.png'
+import footerLogo from './assets/EaglehacksEagle.svg'
 import GalleryStats from './GalleryStats'
 import AboutSection from './AboutSection'
 import FaqSection from './FaqSection'
 import TeamSection from './TeamSection'
+import SponsorPage from './SponsorPage'
 
 function App() {
   const [imgLoaded, setImgLoaded] = useState(false)
@@ -46,6 +47,9 @@ function App() {
       </section>
       <section id="team" className="section">
         <TeamSection />
+      </section>
+      <section id="sponsors" className="section">
+        <SponsorPage />
       </section>
 
       <footer id="connect" className="site-footer">
