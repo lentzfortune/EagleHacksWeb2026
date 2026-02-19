@@ -2,8 +2,8 @@ import React from 'react'
 import './SponsorPage.css'
 
 const sponsors = [
-  { name: 'Arthrex', logo: '/sponsors/arthrex.svg', href: 'https://www.arthrex.com/', theme: 'light' },
-  { name: 'Eightpoint', logo: '/sponsors/eightpoint.svg', href: 'https://eightpoint.io/', theme: 'dark' },
+  { name: 'Arthrex', logo: '/arthrex.svg', href: 'https://www.arthrex.com/', theme: 'light' },
+  { name: 'Eightpoint', logo: '/eightpoint.svg', href: 'https://eightpoint.io/', theme: 'dark' },
 ]
 
 export default function SponsorPage() {
